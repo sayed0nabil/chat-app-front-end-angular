@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Chat Application</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse d-block d-md-none"  id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" [routerLink]="['/user/login']" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" [routerLink]="['/user/register']" routerLinkActive="active">Register</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" [routerLink]="['/message-chat-box']" routerLinkActive="active">Chat</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged" style="cursor: pointer;">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
